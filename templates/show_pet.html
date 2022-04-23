@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
+{% block title %} {% endblock %}
+
+
+{% block links %} {% endblock %}
+
+
+{% block buttons %} {% endblock %}
+
+
+{% block content %} 
+{% for pet in pets %}
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <img class="img-thumbnail float-start" src="{{ pet.photo_url }}">
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
 {% endblock %}

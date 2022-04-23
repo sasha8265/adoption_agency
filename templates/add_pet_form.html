@@ -1,5 +1,44 @@
 {% extends 'base.html' %}
 
-{% block content %}
+
+{% block title %} Add a New Pet {% endblock %}
+
+
+{% block links %} 
+<a class="link-secondary text-decoration-none" href="/">Back to All Pets</a>
+{% endblock %}
+
+
+{% block buttons %} 
+
+{% endblock %}
+
+
+{% block content %} 
+
+<form method="POST" id="add-pet-form">
+{{ form.hidden_tag() }}
+
+{% for field in form
+if field.widget.input_type != 'hidden' %}
+
+    <div>
+        {{ field.label (class_="form-label mt-4 w-75") }}
+        {{ field (class_="form-control w-75") }}
+
+        {% for error in field.errors %}
+        {{ error }}
+        {% endfor %}
+    </div>
+
+{% endfor %}
+    <div class="row mt-4">
+        <div class="col">
+            <button type="submit" class="btn btn-outline-primary">Add Pet</button>
+            <a class="btn btn-outline-secondary" href="/">Cancel</a>
+        </div>
+    </div>
+
+</form>
 
 {% endblock %}

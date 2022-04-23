@@ -10,9 +10,44 @@
 </head>
 
 <body>
-    {% block content %} {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-3">
+                    {% block title %}{% endblock %}
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="">
+                                {% block links %} {% endblock %}
+                            </td>
+                            <td class="">
+                                {% block buttons %} {% endblock %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+            
+        
 
-
+        <div class="row">
+            <div class="col">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
