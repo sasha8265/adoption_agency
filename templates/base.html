@@ -25,13 +25,13 @@
         </div>
         <div class="row">
             <div class="col">
-                <table>
+                <table class="w-100">
                     <tbody>
                         <tr>
                             <td class="">
                                 {% block links %} {% endblock %}
                             </td>
-                            <td class="">
+                            <td class="align-bottom justify-end">
                                 {% block buttons %} {% endblock %}
                             </td>
                         </tr>
@@ -42,10 +42,8 @@
             
         
 
-        <div class="row">
-            <div class="col">
+        <div class="row mt-5">
                 {% block content %} {% endblock %}
-            </div>
         </div>
     </div>
 </body>

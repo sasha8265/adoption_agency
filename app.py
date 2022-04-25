@@ -26,7 +26,7 @@ def home_page():
 @app.route('/add', methods=['GET', 'POST'])
 def add_pet():
     """Add a new pet"""
-    
+
     form = AddPetForm()
 
     if form.validate_on_submit():
@@ -44,4 +44,10 @@ def add_pet():
 
     else:
         return render_template("add_pet_form.html", form=form)
+
+
+@app.route('/pets/<int:pet_id>')
+def view_pet(pet_id):
+    pet = Pet.query.get(pet_id)
+    return render_template('show_pet.html', pet=pet)
 
