@@ -1,13 +1,55 @@
 {% extends 'base.html' %}
 
 
-{% block title %} {% endblock %}
+{% block title %} {{ pet.name }} {% endblock %}
 
 
-{% block links %} {% endblock %}
+{% block links %}
+<a class="link-secondary text-decoration-none" href="/">All Pets</a>
+{% endblock %}
 
 
-{% block buttons %} {% endblock %}
+{% block content %}
+
+<div class="col">
+    <form method="POST" id="edit-pet-form">
+        {{ form.hidden_tag() }}
+        
+        
+        <div>
+            {{ form.species.label (class_="form-label mt-4 w-75") }}
+            {{ form.species (class_="form-control w-75") }}
+        </div>
+        
+        <div>
+            {{ form.photo_url.label (class_="form-label mt-4 w-75") }}
+            {{ form.photo_url (class_="form-control w-75") }}
+        </div>
+        
+        <div>
+            {{ form.age.label (class_="form-label mt-4 w-75") }}
+            {{ form.age (class_="form-control w-75") }}
+        </div>
+        
+        <div>
+            {{ form.notes.label (class_="form-label mt-4 w-75") }}
+            {{ form.notes (class_="form-control w-75") }}
+        </div>
+        
+        <div class="form-check mt-4">
+            {{ form.available (class_="form-check-input") }}
+            {{ form.available.label (class_="form-check-label") }}
+        </div>
 
 
-{% block content %} {% endblock %}
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-outline-primary">Save </button>
+                <a class="btn btn-outline-secondary" href="/pets/{{pet.id}}">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

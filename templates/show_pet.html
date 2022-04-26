@@ -4,16 +4,19 @@
 {% block title %} {{ pet.name }} {% endblock %}
 
 
-{% block links %} <a class="link-secondary text-decoration-none" href="/">Back to All Pets</a> {% endblock %}
+{% block links %} <a class="link-secondary text-decoration-none" href="/">Back to All Pets</a> 
+{% endblock %}
 
 
 {% block buttons %} 
 <form style="text-align: end;">
-    <button class="btn btn-outline-primary btn-sm" formaction="/{{ pet.id }}/edit-pet" formmethod="get">Edit
-        Pet</button>
+    <button class="btn btn-outline-primary btn-sm" formaction="/pets/{{ pet.id }}/edit" formmethod="get">
+        Edit Pet
+    </button>
 
     <button class="btn btn-outline-danger btn-sm" formaction="/{{ pet.id }}/delete-pet"
-        formmethod="POST">Delete</button>
+        formmethod="POST">Delete
+    </button>
 </form>
 {% endblock %}
 
@@ -28,10 +31,10 @@
     <div>
         <b>Age:</b> {{ pet.age }}
     </div>
-    <div>
+    <div class="mt-2">
         <b>Species:</b> {{ pet.species }}
     </div>
-    <div>
+    <div class="mt-2">
         <b>Notes:</b>
         {% if pet.notes %}
         <p>{{ pet.notes }}</p>

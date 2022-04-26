@@ -27,3 +27,23 @@ class AddPetForm(FlaskForm):
 
 
 
+class EditPetForm(FlaskForm):
+    species = SelectField(
+        "Species",
+        choices=[("cat", "Cat"), ("dog", "Dog"), ("hedgehog", "Hedgehog"), ("guinea_pig", "Guinea Pig")])
+    photo_url = StringField(
+        "Photo URL", 
+        validators=[
+            Optional(), 
+            URL('Must be a valid URL format')])
+    age = IntegerField(
+        "Age in Years", 
+        validators=[
+            Optional(), 
+            NumberRange(min=0, max=30, message="Age must be in whole years between 0 and 30")])
+    notes = TextAreaField(
+        "Notes", 
+        render_kw={"rows": 10, "cols": 5}, 
+        validators=[Optional()])
+    
+    available = BooleanField("Available?")

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block title %} Available Pets {% endblock %}
+{% block title %} Our Pets {% endblock %}
 
 
 
@@ -17,10 +17,10 @@
     <a class="" href="/pets/{{pet.id}}">
     <img style="height: 200px; width: 200px; object-fit: cover;" class="img-thumbnail float-start" src="{{ pet.photo_url }}">
 
-    <h3 class="text-dark text-decoration-none fw-light">
+    <h3 class="text-dark text-decoration-none">
         {{pet.name}}
     </h3>
-    
+
     <div class="">
         {% if pet.available %}
         <p class="text-primary"><b>AVAILABLE!</b></p>
